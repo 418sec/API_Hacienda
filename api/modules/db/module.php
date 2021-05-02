@@ -91,6 +91,15 @@ function db_Connect()
 }
 
 /**
+ * Function to sanitize the field parameter
+ * @param $field , field to sanitize
+ */
+function escape_field($field){
+    global $dbConn;
+    return htmlentities(mysqli_real_escape_string($dbConn,$field));
+}
+
+/**
  * I make queries
  * @param $q The query to be excecuted
  * @param $return The number of return items you want 0: none, 1: Just one, >1: All that you have
